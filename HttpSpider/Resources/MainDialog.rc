@@ -1,0 +1,30 @@
+#include "Resources\Resource.h"
+#include <windows.h>
+
+IDD_MAIN_DIALOG DIALOGEX 0, 0, 420, 320
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_MINIMIZEBOX | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Http spider"
+BEGIN
+
+LTEXT           "Start url:", -1, 5, 10, 70, 8
+EDITTEXT        IDC_START_URL, 70, 10, 100, 12, ES_AUTOHSCROLL
+
+LTEXT           "Threads count:", -1, 5, 25, 70, 8
+EDITTEXT        IDC_THREADS_COUNT, 70, 25, 64, 12, ES_AUTOHSCROLL | ES_NUMBER
+
+LTEXT           "Text to find:", -1, 5, 40, 70, 8
+EDITTEXT        IDC_TEXT, 70, 40, 100, 12, ES_AUTOHSCROLL
+
+LTEXT           "Urls count:", -1, 5, 55, 70, 8
+EDITTEXT        IDC_URLS_COUNT, 70, 55, 64, 12, ES_AUTOHSCROLL | ES_NUMBER
+
+PUSHBUTTON   "Start", IDSTART, 100, 70, 50, 14
+PUSHBUTTON   "Stop", IDSTOP, 40, 70, 50, 14
+
+LTEXT           "Urls in process:", -1, 10, 90, 80, 8
+LISTBOX         IDL_URLS_SCANNING, 10, 100, 400, 100, WS_VSCROLL, WS_HSCROLL
+LTEXT           "Urls scanned:", -1, 10, 100 + 100 + 5, 80, 8
+LISTBOX         IDL_URLS_SCANNED, 10, 100 + 100 + 5 + 10, 400, 100, WS_VSCROLL, WS_HSCROLL
+
+END

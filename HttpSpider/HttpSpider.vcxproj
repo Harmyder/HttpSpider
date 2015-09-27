@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B1459B29-747B-4942-A069-C6200FDFFCEE}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>HttpSpider</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\Bin\</OutDir>
+    <IntDir>..\Temp\$(platform)-$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_$(platform)-$(Configuration)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\Bin\</OutDir>
+    <IntDir>..\Temp\$(platform)-$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_$(platform)-$(Configuration)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="BusinessLogic\LinkConstants.h" />
+    <ClInclude Include="BusinessLogic\LinkStateEventArgs.h" />
+    <ClInclude Include="External\Mozilla\UnitTest_url_parse.h" />
+    <ClInclude Include="External\Mozilla\url_parse.h" />
+    <ClInclude Include="Logging\DummyLogger.h" />
+    <ClInclude Include="Logging\ILogger.h" />
+    <ClInclude Include="Logging\IostreamLogger.h" />
+    <ClInclude Include="Logging\LogManager.h" />
+    <ClInclude Include="Logging\OutputWindowLogger.h" />
+    <ClInclude Include="MVVM\Internal\Event.h" />
+    <ClInclude Include="MVVM\Internal\ICommand.h" />
+    <ClInclude Include="MVVM\Internal\PropertyChangedEventArgs.h" />
+    <ClInclude Include="MVVM\Internal\RelayCommand.h" />
+    <ClInclude Include="MVVM\Internal\ViewBase.h" />
+    <ClInclude Include="MVVM\Internal\ViewModelBase.h" />
+    <ClInclude Include="MVVM\ViewModel\MainViewModel.h" />
+    <ClInclude Include="MVVM\Internal\DialogView.h" />
+    <ClInclude Include="MVVM\View\MainView.h" />
+    <ClInclude Include="Resources\Resource.h" />
+    <ClInclude Include="SDK\Algorithms\Kmp.h" />
+    <ClInclude Include="SDK\Algorithms\UnitTest_Kmp.h" />
+    <ClInclude Include="SDK\AvailableItems.h" />
+    <ClInclude Include="SDK\IQueue.h" />
+    <ClInclude Include="SDK\OneWriterQueue.h" />
+    <ClInclude Include="SDK\Singleton.h" />
+    <ClInclude Include="BusinessLogic\ClientContext.h" />
+    <ClInclude Include="BusinessLogic\ConnectTask.h" />
+    <ClInclude Include="BusinessLogic\Spider.h" />
+    <ClInclude Include="BusinessLogic\ReceiveTask.h" />
+    <ClInclude Include="BusinessLogic\UnitTest_ReceiveTask.h" />
+    <ClInclude Include="SDK\VectorImEl.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Utilities\DebugPrint.h" />
+    <ClInclude Include="Utilities\GetErrorStrings.h" />
+    <ClInclude Include="Utilities\Http\HttpHelper.h" />
+    <ClInclude Include="Utilities\Http\HttpResponseParser.h" />
+    <ClInclude Include="Utilities\Http\UnitTest_HttpResponseParser.h" />
+    <ClInclude Include="Utilities\UnitTests\UnitTest.h" />
+    <ClInclude Include="Utilities\UnitTests\UnitTestHelpers.h" />
+    <ClInclude Include="Utilities\UnitTests\UnitTestsRegistrator.h" />
+    <ClInclude Include="Utilities\Http\UrlParser.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BusinessLogic\LinkStateEventArgs.cpp" />
+    <ClCompile Include="External\Mozilla\UnitTest_url_parse.cpp" />
+    <ClCompile Include="External\Mozilla\url_parse.cc" />
+    <ClCompile Include="HttpSpider.cpp" />
+    <ClCompile Include="Logging\DummyLogger.cpp" />
+    <ClCompile Include="Logging\IostreamLogger.cpp" />
+    <ClCompile Include="Logging\LogManager.cpp" />
+    <ClCompile Include="Logging\OutputWindowLogger.cpp" />
+    <ClCompile Include="MVVM\Internal\Event.cpp" />
+    <ClCompile Include="MVVM\Internal\PropertyChangedEventArgs.cpp" />
+    <ClCompile Include="MVVM\Internal\RelayCommand.cpp" />
+    <ClCompile Include="MVVM\Internal\ViewBase.cpp" />
+    <ClCompile Include="MVVM\Internal\ViewModelBase.cpp" />
+    <ClCompile Include="MVVM\ViewModel\MainViewModel.cpp" />
+    <ClCompile Include="MVVM\Internal\DialogView.cpp" />
+    <ClCompile Include="MVVM\View\MainView.cpp" />
+    <ClCompile Include="SDK\Algorithms\Kmp.cpp" />
+    <ClCompile Include="SDK\Algorithms\UnitTest_Kmp.cpp" />
+    <ClCompile Include="SDK\AvailableItems.cpp" />
+    <ClCompile Include="SDK\OneWriterQueue.cpp" />
+    <ClCompile Include="BusinessLogic\ClientContext.cpp" />
+    <ClCompile Include="BusinessLogic\ConnectTask.cpp" />
+    <ClCompile Include="BusinessLogic\Spider.cpp" />
+    <ClCompile Include="BusinessLogic\ReceiveTask.cpp" />
+    <ClCompile Include="BusinessLogic\UnitTest_ReceiveTask.cpp" />
+    <ClCompile Include="SDK\VectorImEl.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Utilities\DebugPrint.cpp" />
+    <ClCompile Include="Utilities\GetErrorStrings.cpp" />
+    <ClCompile Include="Utilities\Http\HttpHelper.cpp" />
+    <ClCompile Include="Utilities\Http\HttpResponseParser.cpp" />
+    <ClCompile Include="Utilities\Http\UnitTest_HttpResponseParser.cpp" />
+    <ClCompile Include="Utilities\UnitTests\UnitTest.cpp" />
+    <ClCompile Include="Utilities\UnitTests\UnitTestHelpers.cpp" />
+    <ClCompile Include="Utilities\UnitTests\UnitTestsRegistrator.cpp" />
+    <ClCompile Include="Utilities\Http\UrlParser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources\MainDialog.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
