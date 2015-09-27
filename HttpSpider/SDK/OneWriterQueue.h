@@ -52,9 +52,6 @@ namespace SDK
     template <class T>
     bool OneWriterQueue<T>::PopFront(T& t)
     {
-        if (_shutdown)
-            throw OneWriterQueueError("We are shuting down.");
-
         unique_lock<std::mutex> lk(_mutex);
 
         _condition.wait(lk, [&]()
